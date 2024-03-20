@@ -1,19 +1,19 @@
-import { Entity, Column, PrimaryColumn, } from "typeorm";
+import { Entity, Column, PrimaryColumn } from 'typeorm';
 
 @Entity()
 export class Todo {
-    @PrimaryColumn()
-    id: string;
+  @PrimaryColumn()
+  id: string;
 
-    @Column()
-    title: string;
+  @Column()
+  title: string;
 
-    @Column()
-    description: string;
+  @Column()
+  description: string;
 
-    @Column()
-    status: "todo" | "in-progress" | "done";
+  @Column()
+  status: 'todo' | 'in-progress' | 'done';
 
-    @Column()
-    boardId: string;
+  @Column()
+  boardId: string;
 }

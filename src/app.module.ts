@@ -6,18 +6,15 @@ import { DatabaseModule } from './database/database.module';
 import { TodosModule } from './todos/todos.module';
 
 @Module({
-    imports: [
-      ConfigModule.forRoot({
-        envFilePath: '.env', 
-      }),
-      DatabaseModule,
-      TodosModule,
-    ],
-  
-    controllers: [],
-    providers: [],
-  })
+  imports: [
+    ConfigModule.forRoot({
+      envFilePath: '.env',
+    }),
+    DatabaseModule,
+    TodosModule,
+  ],
 
-export class AppModule {
-
-}
+  controllers: [],
+  providers: [],
+})
+export class AppModule {}
