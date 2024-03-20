@@ -8,11 +8,7 @@ export class TodosController {
 
     @Get(':boardId')
     async find(@Param('boardId') boardId:string): Promise<Todo[]> {
-        const todos = await this.todosService.findByBoard(boardId);
-        if (!todos.length) {
-            throw new NotFoundException('No board with this id, you can create one');
-        }
-        return todos;
+        return this.todosService.findByBoard(boardId);
     }
 
     @Post()
@@ -33,6 +29,9 @@ export class TodosController {
 
     @Delete(':id')
     async delete(@Param('id') id: string): Promise<any> {
+        console.log('id', id);
+
+        
         const todo = await this.todosService.findOne(id);
         if (!todo) {
             throw new NotFoundException('Todo not found');
